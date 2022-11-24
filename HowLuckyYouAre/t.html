@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Toss</h1>
+
+        <div class="output"></div>
+         
+           <button> Head </button>
+
+           <button> Tail </button>
+<script>
+let btns=document.querySelectorAll("button")
+let output=document.querySelector(".output")
+for(let t of btns){
+    t.addEventListener("click",()=>{toss(t.innerText)})
+}
+let playerScore=0
+let computerScore=0
+
+function toss(userChoice){
+    let choices=["Head","Tail"]
+    let random=parseInt(Math.random()*choices.length)
+    tossValue=choices[random]
+
+    tossValue==userChoice?playerScore++:computerScore++
+
+    output.innerText=`PlayerScore: ${playerScore}  ComputerScore: ${computerScore}`
+}
+
+</script>
+</body>
+</html>
